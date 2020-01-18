@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// import  from "react-";
-
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Helmet from "react-helmet";
 
 const About = () => {
@@ -18,17 +16,17 @@ const About = () => {
   </div>
 }
 
-
 ReactDOM.render(
-  <Router>
+  <BrowserRouter>
     <Switch>
       <Route path="/about" component={About}/>
       <Route path="/" component={App}/>
     </Switch>
-  </Router>
+  </BrowserRouter>
   , document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+if ((module as any).hot) {
+  (module as any).hot.accept();
+}

@@ -1,0 +1,11 @@
+
+.button {
+  background: #000;
+  color: green;
+  font-weight: bold;
+  transition: color .8s
+}
+
+.aa {
+  color: red;
+}
